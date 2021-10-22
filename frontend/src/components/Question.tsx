@@ -1,6 +1,5 @@
 import {Button, Card, CardActions, CardContent, Typography} from "@mui/material";
 import React from 'react';
-import {useThemeSettings} from "../config/theme";
 
 interface QuestionProps {
     title: string,
@@ -9,7 +8,7 @@ interface QuestionProps {
 }
 
 export const Question = (props:QuestionProps) => {
-    return <Card>
+    return <Card sx={{ marginTop: '100px' }}>
         <CardContent>
             <Typography gutterBottom variant="h5" component="div">
                 {props.title}
@@ -17,9 +16,9 @@ export const Question = (props:QuestionProps) => {
             <Typography variant="body2" color="text.secondary">
                 {props.text}
             </Typography>
-            <CardActions>
-                <Button variant="contained" size="small" onClick={() => props.callBack(true)}>Yes</Button>
-                <Button variant="contained" size="small" onClick={() => props.callBack(false)}>No</Button>
+            <CardActions sx={{ display: 'flex', justifyContent: 'space-around', marginTop: '30px' }}>
+                <Button sx={{ paddingLeft: '30px', paddingRight: '30px' }} variant="contained" size="small" color="success" onClick={() => props.callBack(true)}>JA</Button>
+                <Button sx={{ paddingLeft: '30px', paddingRight: '30px' }} variant="contained" size="small" color="error" onClick={() => props.callBack(false)}>NEIN</Button>
             </CardActions>
         </CardContent>
     </Card>
