@@ -1,4 +1,4 @@
-import {createTheme, ThemeProvider} from "@mui/material";
+import {createTheme, CssBaseline, ThemeProvider} from "@mui/material";
 import React, {createContext, Dispatch, SetStateAction, useContext, useMemo, useState} from "react";
 
 
@@ -13,7 +13,7 @@ type ThemeContextProps = {
 
 const ThemeContext = createContext<ThemeContextProps>({} as any)
 
-export const ThemeContextProvider = (props: {children: any}) => {
+export const ThemeContextProvider = (props: { children: any }) => {
     const [fontSize, setFontSize] = useState(18)
     const [font, setFont] = useState('Arial')
 
@@ -25,14 +25,15 @@ export const ThemeContextProvider = (props: {children: any}) => {
     }), [font, fontSize])
 
     return <ThemeContext.Provider
-    value={{
-        fontSize,
-        setFontSize,
-        font,
-        setFont,
-    }}
+        value={{
+            fontSize,
+            setFontSize,
+            font,
+            setFont,
+        }}
     >
         <ThemeProvider theme={theme}>
+            <CssBaseline/>
             {props.children}
         </ThemeProvider>
     </ThemeContext.Provider>
