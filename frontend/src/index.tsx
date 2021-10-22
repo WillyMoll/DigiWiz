@@ -4,14 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {ThemeContextProvider} from "./config/theme";
-import {BrowserRouter} from 'react-router-dom';
+import {BrowserRouter} from "react-router-dom";
+import {SnackbarProvider} from "notistack";
 
 ReactDOM.render(
     <React.StrictMode>
         <ThemeContextProvider>
-            <BrowserRouter>
-                <App/>
-            </BrowserRouter>
+            <SnackbarProvider>
+                <BrowserRouter>
+                    <App/>
+                </BrowserRouter>
+            </SnackbarProvider>
         </ThemeContextProvider>
     </React.StrictMode>,
     document.getElementById('root')
