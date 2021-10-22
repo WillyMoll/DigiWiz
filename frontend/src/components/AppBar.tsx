@@ -1,6 +1,7 @@
 import {alpha, InputBase, styled, Toolbar, Typography, AppBar as MuiAppBar} from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import React from "react";
+import {useHistory} from "react-router-dom";
 
 const Search = styled('div')(({theme}) => ({
     position: 'relative',
@@ -43,6 +44,8 @@ const StyledInputBase = styled(InputBase)(({theme}) => ({
 }));
 
 export const AppBar = () => {
+    const h = useHistory();
+
     return <MuiAppBar position="static">
         <Toolbar>
             <Typography
@@ -50,6 +53,7 @@ export const AppBar = () => {
                 noWrap
                 component="div"
                 sx={{display: {xs: 'none', sm: 'block'}}}
+                onClick={() => h.push('/')}
             >
                 DigiWiz
             </Typography>
