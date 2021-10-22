@@ -1,5 +1,11 @@
 {
+  "scripts": {
+    "start": "ts-node src/index.ts"
+  },
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "ts-node": "^10.4.0"
   }
 }
