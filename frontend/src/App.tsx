@@ -7,12 +7,16 @@ import {
     Card,
     CardContent,
     Container,
-    InputBase, MenuItem, Select, Slider,
+    InputBase,
+    MenuItem,
+    Select,
+    Slider,
     styled,
     Toolbar,
     Typography
 } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
+import {useThemeSettings} from "./config/theme";
 
 
 const Search = styled('div')(({theme}) => ({
@@ -56,6 +60,8 @@ const StyledInputBase = styled(InputBase)(({theme}) => ({
 }));
 
 function App() {
+    const {fontSize, setFontSize, font, setFont} = useThemeSettings()
+
     return (
         <Container>
             <Box sx={{flexGrow: 1}}>
@@ -67,7 +73,7 @@ function App() {
                             component="div"
                             sx={{display: {xs: 'none', sm: 'block'}}}
                         >
-                            MUI
+                            DigiWiz
                         </Typography>
                         <Search>
                             <SearchIconWrapper>
@@ -85,12 +91,20 @@ function App() {
                 <Toolbar/>
                 <Card>
                     <CardContent>
-                        <Select>
-                            <MenuItem>Arial</MenuItem>
-                            <MenuItem>Helvetica</MenuItem>
-                            <MenuItem>OpenDyslexic</MenuItem>
+                        <Select
+                            value={font}
+                            onChange={(e) => setFont(e.target.value)}
+                        >
+                            <MenuItem value={'Arial'}>Arial</MenuItem>
+                            <MenuItem value={'Helvetica'}>Helvetica</MenuItem>
+                            <MenuItem value={'OpenDyslexic'}>OpenDyslexic</MenuItem>
                         </Select>
-                        <Slider min={12} max={24}/>
+                        <Slider
+                            min={16}
+                            max={48}
+                            value={fontSize}
+                            onChange={(_, v) => setFontSize(Array.isArray(v) ? v[0] : v)}
+                        />
                     </CardContent>
                     <CardContent>
                         Lorem Ipsum dolor sit amet.
