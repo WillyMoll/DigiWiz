@@ -1,5 +1,6 @@
 import express from "express";
 import config from "./config/config.json";
+import {DBMock} from "./models/DBMock";
 
 const app = express();
 const port = config.port; // default port to listen

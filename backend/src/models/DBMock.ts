@@ -1,4 +1,4 @@
-class DBMock {
+export class DBMock {
 
     solutions: Solution[];
     useCases: UseCase[];
