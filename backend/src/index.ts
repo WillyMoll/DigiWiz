@@ -10,7 +10,14 @@ app.get("/questions", (req, res) => {
         success: true,
         payload: db.getQuestions()
     });
-})
+});
+
+app.get("/usecases", (req, res) => {
+    res.send({
+        success: true,
+        payload: db.getUseCases()
+    })
+});
 
 // start the express server
 app.listen(port, () => {
