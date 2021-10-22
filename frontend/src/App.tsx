@@ -1,27 +1,19 @@
 import React from 'react';
-import {Box, Button, Card, CardContent, Container, Toolbar} from "@mui/material";
+import {Container} from "@mui/material";
 import {AppBar} from "./components/AppBar";
-import {FontSwitcher} from "./components/FontSwitcher";
+import {Route, Switch} from "react-router-dom";
+import {HomePage} from "./components/pages/HomePage";
+import {QuestionPage} from "./components/pages/QuestionPage";
 
 
 function App() {
     return (
         <Container>
             <AppBar/>
-            <Box>
-                <Toolbar/>
-                <Card>
-                    <CardContent>
-                        <FontSwitcher/>
-                    </CardContent>
-                    <CardContent>
-                        Lorem Ipsum dolor sit amet.
-                    </CardContent>
-                    <CardContent>
-                        <Button>Start Quiz</Button>
-                    </CardContent>
-                </Card>
-            </Box>
+            <Switch>
+                <Route exact path={'/'} component={HomePage}/>
+                <Route path={'/questions'} component={QuestionPage}/>
+            </Switch>
         </Container>
     );
 }
