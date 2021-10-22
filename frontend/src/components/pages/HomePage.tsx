@@ -1,4 +1,4 @@
-import {Box, Button, Card, CardContent, Toolbar} from "@mui/material";
+import {Box, Button, Card, CardContent} from "@mui/material";
 import {FontSwitcher} from "../FontSwitcher";
 import React from "react";
 import {useHistory} from "react-router-dom";
@@ -10,7 +10,6 @@ export const HomePage = () => {
     }
 
     return <Box>
-        <Toolbar/>
         <Card>
             <CardContent>
                 <FontSwitcher/>
