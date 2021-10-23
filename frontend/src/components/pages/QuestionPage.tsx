@@ -37,11 +37,11 @@ export const QuestionPage = () => {
             />
         </Grid>
         <Grid item xs={12} md={6}>
-            <Question
+            {question && <Question
                 title={"TestQuestion"}
                 text={question.description}
                 callBack={handleQuestionAnswer}
-            />
+            />}
         </Grid>
     </Grid>
 }
