@@ -33,19 +33,23 @@ export const QuestionPage = () => {
     const question = useMemo(() => {
         if (!questionSet.questions || questionSet.questions.length <= 0) return null
 
-        return answers.length < questionSet.questions.length ? <Question
+        if (answers.length >= questionSet.questions.length) {
+            const ids = []
+            for (let k in answers) {
+                if (answers[k]) {
+                    ids.push(questionSet.questions[k].id)
+                }
+            }
+
+            h.push(`/usecases?${ids.map(i => `ids=${i}`).join('&')}`)
+
+            return null;
+        }
+
+        return <Question
             text={questionSet.questions[answers.length].description}
             callBack={handleQuestionAnswer}
-        /> : <Paper>
-            <Typography>Fertig! : )</Typography>
-            <Button
-
-                variant={'contained'}
-                onClick={() => {
-                    h.push('/usecase/1')
-                }}
-            >Vorschläge anzeigen</Button>
-        </Paper>
+        />
     }, [questionSet, answers])
 
     const progress = useMemo(() => {
@@ -73,6 +77,7 @@ export const QuestionPage = () => {
                 value={progress}
                 variant="determinate"
             />
+            {answers.length}/{questionSet.questions?.length ?? 1}
         </Grid>
     </Grid>
 }
