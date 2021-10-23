@@ -24,16 +24,14 @@ app.get("/questions", (req, res) => {
 });
 
 app.get("/usecases", (req, res) => {
-
-    res.send(db.getUseCases())
+    res.send(db.getUseCases());
 });
 app.get("/usecases/:id", (req, res) => {
     res.send(db.getUseCase(req.params.id))
 });
 
 app.get("/solutions", (req, res) => {
-
-    res.send(db.getSolutions())
+    res.send(db.getSolutions());
 });
 
 app.get("/solutions/:id", (req, res) => {
@@ -41,8 +39,7 @@ app.get("/solutions/:id", (req, res) => {
 });
 
 app.get("/companies", (req, res) => {
-
-    res.send(db.getCompanies())
+    res.send(db.getCompanies());
 });
 
 app.post("/usecases", (req, res) => {

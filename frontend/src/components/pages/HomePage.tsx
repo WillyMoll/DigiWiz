@@ -41,7 +41,7 @@ export const HomePage = () => {
         <Box sx={{height: 20}}/>
         <Grid  container spacing={3}
                >
-            {questionSets.map((q: any) => <Grid item xs={4}>
+            {questionSets.map((q: any) => <Grid item sm={4} xs={12}>
                 <Card >
                     <CardHeader title={q.name}/>
                     <CardMedia
