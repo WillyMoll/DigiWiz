@@ -31,8 +31,9 @@ export const HomePage = () => {
                 </Typography>
                 <Box sx={{height: 10}}/>
                 <Typography variant="body2" color="text.secondary">
-                    Beantworten sie die Fragen
-                    Anleitung von Digiwiz. Anleitung von Digiwiz.Anleitung von Digiwiz.Anleitung von Digiwiz.Anleitung von Digiwiz.Anleitung von Digiwiz.
+                    Wählen sie die Branche in welcher sie tätig sind und beantworten sie die geschlossenen Fragen des Programmes.
+                    Aufgrund ihrer Wahl werden ihnen danach digitale Lösungen angezeigt, welche die Produktivität ihres
+                    Unternehmens steigern könnten.
                 </Typography>
             </CardContent>
         </Card>
