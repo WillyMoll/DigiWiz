@@ -22,8 +22,9 @@ export const HomePage = () => {
                 <Box sx={{height: 20}}/>
                 <Typography variant="body2" color="text.secondary">
                     DigiWitz ist ihr online Assistent um Digitale Lösungen für ihre Firma zu finden.
-                    Beschreibung von Digiwiz.
-                    Beschreibung von Digiwiz. Beschreibung von Digiwiz.Beschreibung von Digiwiz.Beschreibung von Digiwiz.Beschreibung von Digiwiz.Beschreibung von Digiwiz.
+                    Die Mitarbeiter von DigiWitz versuchen die Digitalisierung voranzutreiben indem wir
+                    Firmen auf schon existierende Software aufmerksam zu machen welche ihnen viel Zeit und Geld sparen
+                    können.
                 </Typography>
                 <Box sx={{height: 20}}/>
                 <Typography variant="h6" component="div">
