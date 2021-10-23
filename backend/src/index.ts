@@ -7,6 +7,7 @@ const app = express();
 const port = config.port; // default port to listen
 const db = new DBMock();
 
+
 app.use(cors());
 
 app.get("/questions", (req, res) => {
