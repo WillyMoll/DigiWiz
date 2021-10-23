@@ -43,18 +43,8 @@ export class DBMock {
         this.useCases.push(new UseCase(4, "Chat-Programm", [slackSolution], [chat]));
 
         this.questionSets = [
-            {
-                name: "Beispiel 1",
-                id: "1",
-                questions: [banking, buchhaltung, chat],
-                icon: 'https://cdn0.iconfinder.com/data/icons/shopping-set-3/512/e7-512.png',
-            },
-            {
-                name: "Beispiel 2",
-                id: "2",
-                questions: [chat, planung, banking],
-                icon: 'https://cdn0.iconfinder.com/data/icons/shopping-set-3/512/e7-512.png',
-            },
+            new QuestionSet(1, "Beispiel 1", [banking, buchhaltung, chat], "https://cdn0.iconfinder.com/data/icons/shopping-set-3/512/e7-512.png"),
+            new QuestionSet(2, "Beispiel 2", [banking, planung, chat], "https://cdn0.iconfinder.com/data/icons/shopping-set-3/512/e7-512.png"),
         ]
 
     }
@@ -68,6 +58,7 @@ export class DBMock {
     }
 
     getQuestionSet(id: string): any {
+        // @ts-ignore
         return this.questionSets.find(s => s.id == id);
     }
 
@@ -99,5 +90,10 @@ export class DBMock {
 
     getUseCase(id: string) {
         return this.getUseCases().filter(u => u.id == id);
+    }
+
+    getSolution(id: string) {
+        // @ts-ignore
+        return this.solutions.find(s => s.id == id);
     }
 }
