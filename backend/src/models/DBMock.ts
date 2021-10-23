@@ -82,18 +82,6 @@ export class DBMock {
 
     getUseCasesByIDs(questionIds: number[]) {
         return this.useCases.filter(u => questionIds.indexOf(u.id) > -1 && u.questions.find(q => q.id === u.id))
-        let useCases = [];
-        for (let id of questionIds) {
-            for (let useCase of this.useCases) {
-                for (let question of useCase.questions) {
-                    if (question.id === id) {
-                        useCases.push(useCase);
-                    }
-                }
-            }
-        }
-
-        return Array.from(new Set(useCases));
     }
 
     getUseCase(id: string) {
