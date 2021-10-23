@@ -25,12 +25,6 @@ export const HomePage = () => {
             <CardContent>
                 Lorem Ipsum dolor sit amet.
             </CardContent>
-            <CardContent>
-                <Button
-                    variant={'contained'}
-                    onClick={startQuiz}
-                >Fragebogen starten</Button>
-            </CardContent>
         </Card>
         <Box sx={{height: 20}}/>
         <Grid container spacing={3}>

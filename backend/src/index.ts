@@ -26,6 +26,9 @@ app.get("/usecases", (req, res) => {
 
     res.send(db.getUseCases())
 });
+app.get("/usecases/:id", (req, res) => {
+    res.send(db.getUseCase(req.params.id))
+});
 
 app.get("/solutions", (req, res) => {
 

@@ -40,9 +40,8 @@ export const QuestionPage = () => {
             <Button
                 variant={'contained'}
                 onClick={() => {
-                    h.push('/usecase/example')
-                }
-                }
+                    h.push('/usecase/1')
+                }}
             >Vorschläge anzeigen</Button>
         </Paper>
     }, [questionSet, answers])
