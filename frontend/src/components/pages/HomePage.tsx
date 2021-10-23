@@ -21,7 +21,7 @@ export const HomePage = () => {
                 </Typography>
                 <Box sx={{height: 20}}/>
                 <Typography variant="body2" color="text.secondary">
-                    DigiWitz ist ihr online Assistent um Digitale Lösungen für ihre Firma zu finden.
+                    DigiWiz ist ihr online Assistent um Digitale Lösungen für ihre Firma zu finden.
                     Beschreibung von Digiwiz.
                     Beschreibung von Digiwiz. Beschreibung von Digiwiz.Beschreibung von Digiwiz.Beschreibung von Digiwiz.Beschreibung von Digiwiz.Beschreibung von Digiwiz.
                 </Typography>
