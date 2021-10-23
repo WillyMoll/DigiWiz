@@ -50,8 +50,8 @@ export class DBMock {
             new QuestionSet(3, "Detailhandel", [banking, planung, chat], "https://www.toponline.ch/fileadmin/user_upload/Detailhandel.jpg"),
             new QuestionSet(4, "Produktionsunternehmen", [banking, planung, chat], "https://www.it-daily.net/images/Aufmacherbilder/Smart_Factory_686654287-500.jpg"),
             new QuestionSet(5, "Bauunternehmen", [banking, planung, chat], "https://img.fotocommunity.com/kranen-soweit-das-auge-reicht-29f8543d-4c4b-476c-a86d-a57a46d34d2d.jpg?width=1000"),
-            new QuestionSet(6, "Finanzen", [banking, planung, chat], "https://images.moneycontrol.com/static-mcnews/2021/03/business-stocks_shutterstock_1402151111-1-770x433.jpg?impolicy=website&width=770&height=431"),
-            new QuestionSet(6, "IT", [banking, planung, chat], "https://i.pinimg.com/originals/a2/05/33/a20533e44206f047b96fbca012a2a769.jpg"),
+            new QuestionSet(6, "Finanzen", [banking, buchhaltung, chat], "https://images.moneycontrol.com/static-mcnews/2021/03/business-stocks_shutterstock_1402151111-1-770x433.jpg?impolicy=website&width=770&height=431"),
+            new QuestionSet(7, "IT", [banking, planung, chat, buchhaltung], "https://i.pinimg.com/originals/a2/05/33/a20533e44206f047b96fbca012a2a769.jpg"),
         ]
     }
 
@@ -81,6 +81,7 @@ export class DBMock {
     }
 
     getUseCasesByIDs(questionIds: number[]) {
+        return this.useCases.filter(u => questionIds.indexOf(u.id) > -1 && u.questions.find(q => q.id === u.id))
         let useCases = [];
         for (let id of questionIds) {
             for (let useCase of this.useCases) {
@@ -91,6 +92,7 @@ export class DBMock {
                 }
             }
         }
+
         return Array.from(new Set(useCases));
     }
 
