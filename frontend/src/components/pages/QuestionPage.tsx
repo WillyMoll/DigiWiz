@@ -3,6 +3,7 @@ import {Question} from "../Question";
 import {useEffect, useState} from "react";
 import {ApiService} from "../../service/ApiService";
 import {useSnackbar} from 'notistack';
+import LoadingOverlay from 'react-loading-overlay';
 
 export const QuestionPage = () => {
     const [question, setQuestion] = useState<any>()
@@ -37,11 +38,15 @@ export const QuestionPage = () => {
             />
         </Grid>
         <Grid item xs={12} md={6}>
+            <LoadingOverlay
+                active={loading}
+                >
             {question && <Question
                 title={"TestQuestion"}
                 text={question.description}
                 callBack={handleQuestionAnswer}
             />}
+            </LoadingOverlay>
         </Grid>
     </Grid>
 }
