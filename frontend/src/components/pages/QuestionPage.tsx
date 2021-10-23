@@ -36,7 +36,7 @@ export const QuestionPage = () => {
         if (answers.length >= questionSet.questions.length) {
             const ids = []
             for (let k in answers) {
-                if (answers[k]) {
+                if ((answers[k] ^ questionSet.questions[k].invert) === 1) {
                     ids.push(questionSet.questions[k].id)
                 }
             }
