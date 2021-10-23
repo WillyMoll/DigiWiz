@@ -1,4 +1,7 @@
-class UseCase {
+import {Question} from "./Question";
+import {Solution} from "./Solution";
+
+export class UseCase {
 
     id: number;
     description: string;

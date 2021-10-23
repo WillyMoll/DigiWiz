@@ -1,4 +1,7 @@
-class Solution {
+import {Company} from "./Company";
+import {UseCase} from "./UseCase";
+
+export class Solution {
 
     id: number;
     website: string;

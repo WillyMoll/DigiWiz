@@ -1,3 +1,8 @@
+import {Solution} from "./Solution";
+import {UseCase} from "./UseCase";
+import {Question} from "./Question";
+import {Company} from "./Company";
+
 export class DBMock {
 
     solutions: Solution[];
@@ -11,6 +16,7 @@ export class DBMock {
         let chat = new Question(3, "Verwenden sie ein Firmeninternes Nachrichten-Programm?");
         let planung = new Question(4, "Verwenden sie Ein Programm zur Arbeitsplanung?");
 
+        this.useCases = [];
         this.useCases.push(new UseCase(1, "Online Banking", [], [banking]));
         this.useCases.push(new UseCase(2, "Buchhaltung", [], [buchhaltung]));
         this.useCases.push(new UseCase(3, "Projektverwaltung", [], [chat, planung]));
@@ -23,6 +29,7 @@ export class DBMock {
         let zoho = new Company(5, "https://www.zoho.com", "The best project management software for any business");
         let slack = new Company(6, "https://slack.com/intl/de-ch", "Slack ist die Zukunft der Arbeit");
 
+        this.solutions = [];
         this.solutions.push(new Solution(1, "https://www.zkb.ch/de/private/digitales-banking/ebanking.html", "Mit eBanking erledigen Sie Ihre Bankgeschäfte jederzeit am Computer. Von zu Hause oder dort, wo Sie gerade online sind. Ob Zahlungen erledigen, Börsenaufträge tätigen oder einen Dauerauftrag ändern: eBanking ist einfach, bequem und sicher.", zkb, []));
         this.solutions.push(new Solution(2, "https://ebanking-ch4.ubs.com/workbench/WorkbenchOpenAction.do?login&", "Wir bieten Ihnen für jedes Bedürfnis die passende Banklösung. Egal, ob es dabei um Konten und Karten, ein Eigenheim, Vorsorge oder eine Geldanlage geht.", ubs, []));
         this.solutions.push(new Solution(3, "https://www.bexio.com/en-CH/product-overview", "Print invoices directly or send them the convenient, electronic way. The orange payment slip makes bank reconciliation a breeze. That means you get paid faster. Incoming bills from suppliers you simply scan and post. Simple dashboards allow you to keep track of incoming and outgoing payments.", bexio, []));
