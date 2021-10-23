@@ -41,7 +41,7 @@ export const HomePage = () => {
             </CardContent>
         </Card>
         <Box sx={{height: 20}}/>
-        <Grid  container spacing={3}
+        <Grid  container spacing={3} style={{backgroundColor:'fffdd0'}}
                >
             {questionSets.map((q: any) => <Grid item sm={4} xs={12}>
                 <Card >
