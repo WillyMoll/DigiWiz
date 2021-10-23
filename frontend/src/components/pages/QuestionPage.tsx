@@ -37,10 +37,9 @@ export const QuestionPage = () => {
             />
         </Grid>
         <Grid item xs={12} md={6}>
-            {JSON.stringify(question)}
             <Question
                 title={"TestQuestion"}
-                text={"TestQuestion Text TestQuestion Text TestQuestion Text TestQuestion TextTestQuestion Text"}
+                text={question.description}
                 callBack={handleQuestionAnswer}
             />
         </Grid>
