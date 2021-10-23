@@ -16,6 +16,7 @@ export const FontSwitcher = () => {
                 <MenuItem value={'Arial'}>Arial</MenuItem>
                 <MenuItem value={'Helvetica'}>Helvetica</MenuItem>
                 <MenuItem value={'OpenDyslexic'}>OpenDyslexic</MenuItem>
+                <MenuItem value={'ComicSans'}>ComicSans</MenuItem>
             </Select>
         </Grid>
         <Grid item xs={12}>

@@ -43,8 +43,13 @@ export class DBMock {
         this.useCases.push(new UseCase(4, "Chat-Programm", [slackSolution], [chat]));
 
         this.questionSets = [
-            new QuestionSet(1, "Beispiel 1", [banking, buchhaltung, chat], "https://cdn0.iconfinder.com/data/icons/shopping-set-3/512/e7-512.png"),
-            new QuestionSet(2, "Beispiel 2", [banking, planung, chat], "https://cdn0.iconfinder.com/data/icons/shopping-set-3/512/e7-512.png"),
+            new QuestionSet(1, "IT", [banking, buchhaltung, chat], "https://cdn0.iconfinder.com/data/icons/shopping-set-3/512/e7-512.png"),
+            new QuestionSet(2, "Gastronomie", [banking, planung, chat], "https://cdn0.iconfinder.com/data/icons/shopping-set-3/512/e7-512.png"),
+            new QuestionSet(3, "Detailhandel", [banking, planung, chat], "https://cdn0.iconfinder.com/data/icons/shopping-set-3/512/e7-512.png"),
+            new QuestionSet(4, "Produktionsunternehmen", [banking, planung, chat], "https://cdn0.iconfinder.com/data/icons/shopping-set-3/512/e7-512.png"),
+            new QuestionSet(5, "Bauunternehmen", [banking, planung, chat], "https://cdn0.iconfinder.com/data/icons/shopping-set-3/512/e7-512.png"),
+            new QuestionSet(6, "Finanzen", [banking, planung, chat], "https://cdn0.iconfinder.com/data/icons/shopping-set-3/512/e7-512.png"),
+
         ]
 
     }

@@ -39,6 +39,7 @@ export const QuestionPage = () => {
         /> : <Paper>
             <Typography>Fertig! : )</Typography>
             <Button
+
                 variant={'contained'}
                 onClick={() => {
                     h.push('/usecase/1')

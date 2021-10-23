@@ -39,17 +39,19 @@ export const HomePage = () => {
             </CardContent>
         </Card>
         <Box sx={{height: 20}}/>
-        <Grid container spacing={3}>
+        <Grid  container spacing={3}
+               >
             {questionSets.map((q: any) => <Grid item xs={4}>
-                <Card>
+                <Card >
                     <CardHeader title={q.name}/>
                     <CardMedia
+
                         component="img"
                         height="194"
                         image={q.icon}
                         alt="Fragebogen symbolbild"
                     />
-                    <CardActions>
+                    <CardActions style={{justifyContent: "center"}}>
                         <Button
                             variant={'contained'}
                             onClick={() => {
