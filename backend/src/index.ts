@@ -28,6 +28,11 @@ app.get("/companies", (req, res) => {
     res.send(db.getCompanies())
 });
 
+app.post("/solutions", (req, res) => {
+    res.send(db.getSolutionsByIDs(req.body));
+
+});
+
 // start the express server
 app.listen(port, () => {
     // tslint:disable-next-line:no-console
