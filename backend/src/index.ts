@@ -22,6 +22,20 @@ app.get("/usecases", (req, res) => {
     })
 });
 
+app.get("/solutions", (req, res) => {
+
+    res.send({
+        payload: db.getSolutions()
+    })
+});
+
+app.get("/companies", (req, res) => {
+
+    res.send({
+        payload: db.getCompanies()
+    })
+});
+
 // start the express server
 app.listen(port, () => {
     // tslint:disable-next-line:no-console
