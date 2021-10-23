@@ -2,12 +2,14 @@ import {Solution} from "./Solution";
 import {UseCase} from "./UseCase";
 import {Question} from "./Question";
 import {Company} from "./Company";
+import {QuestionSet} from "./QuestionSet";
 
 export class DBMock {
 
     solutions: Solution[];
     useCases: UseCase[];
     questions: Question[];
+    questionSets: QuestionSet[];
     companies: Company[];
 
     constructor() {
@@ -40,10 +42,33 @@ export class DBMock {
         this.useCases.push(new UseCase(3, "Projektverwaltung", [trelloSolution, zohoSolution], [chat, planung]));
         this.useCases.push(new UseCase(4, "Chat-Programm", [slackSolution], [chat]));
 
+        this.questionSets = [
+            {
+                name: "Beispiel 1",
+                id: "1",
+                questions: [banking, buchhaltung, chat],
+                icon: 'https://cdn0.iconfinder.com/data/icons/shopping-set-3/512/e7-512.png',
+            },
+            {
+                name: "Beispiel 2",
+                id: "2",
+                questions: [chat, planung, banking],
+                icon: 'https://cdn0.iconfinder.com/data/icons/shopping-set-3/512/e7-512.png',
+            },
+        ]
+
     }
 
     getQuestions(): any {
         return this.questions;
+    }
+
+    getQuestionSets(): any {
+        return this.questionSets;
+    }
+
+    getQuestionSet(id: string): any {
+        return this.questionSets.find(s => s.id == id);
     }
 
     getUseCases(): any {

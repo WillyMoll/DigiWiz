@@ -10,6 +10,14 @@ const db = new DBMock();
 
 app.use(cors());
 
+app.get("/questionsets", (req, res) => {
+    res.send(db.getQuestionSets());
+});
+
+app.get("/questionsets/:id", (req, res) => {
+    res.send(db.getQuestionSet(req.params.id));
+});
+
 app.get("/questions", (req, res) => {
     res.send(db.getQuestions());
 });

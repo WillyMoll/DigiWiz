@@ -1,32 +1,51 @@
-import {Grid} from "@mui/material";
+import {Button, Grid, Paper, Typography} from "@mui/material";
 import {Question} from "../Question";
-import {useEffect, useState} from "react";
+import {useEffect, useMemo, useState} from "react";
 import {ApiService} from "../../service/ApiService";
 import {useSnackbar} from 'notistack';
 import LoadingOverlay from 'react-loading-overlay';
+import {useHistory, useParams} from "react-router-dom";
 
 export const QuestionPage = () => {
-    const [question, setQuestion] = useState<any>()
+    const {id} = useParams<{ id: string }>()
+    const h = useHistory()
+    const [questionSet, setQuestionSet] = useState<any>({})
     const [loading, setLoading] = useState(false)
+    const [answers, setAnswers] = useState<any[]>([])
     const {enqueueSnackbar} = useSnackbar();
 
-    const loadQuestion = () => {
+    useEffect(() => {
         if (loading) return;
+
         setLoading(true)
-        ApiService.getQuestion()
-            .then(setQuestion)
+        ApiService.getQuestionSet(id)
+            .then(setQuestionSet)
             .catch(e => enqueueSnackbar('Fehler', {variant: 'error'}))
             .finally(() => setLoading(false))
-    }
-
-    useEffect(() => {
-        loadQuestion();
     }, [])
 
     function handleQuestionAnswer(answeredYes: boolean) {
-        console.log(answeredYes);
-        loadQuestion()
+        setAnswers(a => [...a, answeredYes])
     }
+
+    const question = useMemo(() => {
+        if (!questionSet.questions || questionSet.questions.length <= 0) return null
+
+        return answers.length < questionSet.questions.length ? <Question
+            title={"TestQuestion"}
+            text={questionSet.questions[answers.length].description}
+            callBack={handleQuestionAnswer}
+        /> : <Paper>
+            <Typography>Fertig! : )</Typography>
+            <Button
+                variant={'contained'}
+                onClick={() => {
+                    h.push('/usecase/example')
+                }
+                }
+            >Vorschläge anzeigen</Button>
+        </Paper>
+    }, [questionSet, answers])
 
     return <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
@@ -40,12 +59,8 @@ export const QuestionPage = () => {
         <Grid item xs={12} md={6}>
             <LoadingOverlay
                 active={loading}
-                >
-            {question && <Question
-                title={"TestQuestion"}
-                text={question.description}
-                callBack={handleQuestionAnswer}
-            />}
+            >
+                {question}
             </LoadingOverlay>
         </Grid>
     </Grid>
