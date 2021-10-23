@@ -21,11 +21,11 @@ export const Solution = (props: SolutionProps) => {
                 <Typography variant="body2" color="text.secondary">
                     {props.text}
                 </Typography>
-                <CardActions>
+                <CardActions sx={{paddingTop: '10px', paddingLeft: '0px'}}>
                     <Button sx={{paddingLeft: '30px', paddingRight: '30px'}} variant="contained" size="small"
                             onClick={() => {
                                 window.open(props.webUrl)
-                            }}>Webseite</Button>
+                            }}>Anleitung</Button>
                 </CardActions>
             </CardContent>
         </Box>

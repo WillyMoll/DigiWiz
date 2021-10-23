@@ -34,9 +34,6 @@ export const HomePage = () => {
                 <Box sx={{height: 20}}/>
                 <Typography variant="body2" color="text.secondary">
                     DigiWiz ist ihr online Assistent um Digitale Lösungen für ihre Firma zu finden.
-                    Beschreibung von DigiWiz.
-                    Beschreibung von DigiWiz. Beschreibung von DigiWiz. Beschreibung von DigiWiz. Beschreibung von
-                    DigiWiz. Beschreibung von DigiWiz. Beschreibung von DigiWiz.
                 </Typography>
                 <Box sx={{height: 20}}/>
                 <Typography variant="h6" component="div">
@@ -47,7 +44,7 @@ export const HomePage = () => {
                     Wählen sie die Branche in welcher sie tätig sind und beantworten sie die geschlossenen Fragen des
                     Programmes.
                     Aufgrund ihrer Wahl werden ihnen danach digitale Lösungen angezeigt, welche die Produktivität ihres
-                    Unternehmens steigern könnten.
+                    Unternehmens steigern werden.
                 </Typography>
             </CardContent>
         </Card>
@@ -82,7 +79,7 @@ export const HomePage = () => {
                                 onClick={() => {
                                     h.push(`/questions/${q.id}`)
                                 }}
-                            >Auswählen</Button>
+                            >Quiz starten</Button>
                         </CardActions>
                     </Card>
                 </Grid>)}
