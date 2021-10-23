@@ -28,7 +28,9 @@ export class DBMock {
         let trelloSolution = new Solution(4, "Trello", "https://trello.com/en/pricing", "https://ct-academy.ch/wp-content/uploads/2020/03/trello-logo-blue-996x306.png", "Trusted by millions, Trello powers teams all around the world. Explore which option is right for you.", trello, []);
         let zohoSolution = new Solution(5, "Zoho", "https://www.zoho.com/projects", "https://www.zoho.com/one/images/zoho-one@2x.png", "The best project management software for any business", zoho, []);
         let slackSolution = new Solution(6, "Slack", "https://slack.com/intl/de-ch", "https://aem.dropbox.com/cms/content/dam/dropbox/www/en-us/business/app-integrations/slack/Slack_logo_new.png", "Slack ist die Zukunft der Arbeit", slack, []);
-        this.solutions = [zkbSolution, ubsSolution, bexioSolution, trelloSolution, zohoSolution, slackSolution];
+        let redmineSolution = new Solution(7, "Redmine", "https://www.redmine.org/", "https://sanbo-app.s3.amazonaws.com/uploads/service/logo/17/redmine_logo.png", "Redmine is a flexible project management web application. Written using the Ruby on Rails framework, it is cross-platform and cross-database.", null, []);
+        let jiraSolution = new Solution(8, "Jira", "https://www.atlassian.com/de/software/jira", "https://cdn.freelogovectors.net/wp-content/uploads/2018/05/jira-software_logo.png", "Jira Software wurde entwickelt, um allen Mitgliedern deines Softwareteams das Planen, Verfolgen und Releasen großartiger Software zu ermöglichen.", null, []);
+        this.solutions = [zkbSolution, ubsSolution, bexioSolution, trelloSolution, zohoSolution, slackSolution, redmineSolution, jiraSolution];
 
         let banking = new Question(1, "Verwenden sie online Banking?", true);
         let buchhaltung = new Question(2, "Machen sie ihre Buchhaltung auf Papier?");
@@ -39,7 +41,7 @@ export class DBMock {
         this.useCases = [];
         this.useCases.push(new UseCase(1, "Online Banking", "Online Banking", [zkbSolution, ubsSolution], [banking]));
         this.useCases.push(new UseCase(2, "Buchhaltung", "Buchhaltung", [bexioSolution], [buchhaltung]));
-        this.useCases.push(new UseCase(3, "Projektverwaltung", "Projektverwaltung", [trelloSolution, zohoSolution], [chat, planung]));
+        this.useCases.push(new UseCase(3, "Projektverwaltung", "Projektverwaltung", [trelloSolution, zohoSolution, redmineSolution, jiraSolution], [chat, planung]));
         this.useCases.push(new UseCase(4, "Chat-Programm", "Chat-Programm", [slackSolution], [chat]));
 
         this.questionSets = [

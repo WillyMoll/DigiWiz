@@ -8,28 +8,20 @@ interface QuestionProps {
 }
 
 export const Question = (props: QuestionProps) => {
-    const buttonProps = {
-        sx: {
-            paddingLeft: '30px',
-            paddingRight: '30px',
-            flexGrow: 1,
-        },
-    };
-
     return <Card sx={{marginTop: '100px'}}>
         <CardContent>
-            <Typography variant="body2" color="text.secondary" sx={{ margin: '10px' }}>
+            <Typography variant="h4" color="text.secondary" sx={{ margin: '10px' }}>
                 {props.text}
             </Typography>
             <CardActions sx={{display: 'flex', justifyContent: 'space-around', marginTop: '30px'}}>
                 <Button
-                    {...buttonProps}
+                    fullWidth={true}
                     variant={'contained'}
                     color="success"
                     onClick={() => props.callBack(true)}
                 >JA</Button>
                 <Button
-                    {...buttonProps}
+                    fullWidth={true}
                     variant={'contained'}
                     color="error"
                     onClick={() => props.callBack(false)}
