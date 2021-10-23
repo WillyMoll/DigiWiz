@@ -21,7 +21,7 @@ export const HomePage = () => {
         <Card>
             <CardContent>
                 <Typography variant="h3" component="div">
-                    Digiwiz
+                    DigiWiz
                 </Typography>
                 <Box sx={{height: 20}}/>
                 <Typography variant="body2" color="text.secondary">
