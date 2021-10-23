@@ -11,6 +11,14 @@ const db = new DBMock();
 app.use(cors());
 app.use(express.json());
 
+app.get("/questionsets", (req, res) => {
+    res.send(db.getQuestionSets());
+});
+
+app.get("/questionsets/:id", (req, res) => {
+    res.send(db.getQuestionSet(req.params.id));
+});
+
 app.get("/questions", (req, res) => {
     res.send(db.getQuestions());
 });
@@ -18,6 +26,9 @@ app.get("/questions", (req, res) => {
 app.get("/usecases", (req, res) => {
 
     res.send(db.getUseCases())
+});
+app.get("/usecases/:id", (req, res) => {
+    res.send(db.getUseCase(req.params.id))
 });
 
 app.get("/solutions", (req, res) => {

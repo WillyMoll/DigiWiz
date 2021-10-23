@@ -14,7 +14,7 @@ function App() {
             <Toolbar/>
             <Switch>
                 <Route exact path={'/'} component={HomePage}/>
-                <Route path={'/questions'} component={QuestionPage}/>
+                <Route path={'/questions/:id'} component={QuestionPage}/>
                 <Route path={'/usecase/:usecase'} component={UseCasePage}/>
             </Switch>
         </Container>
