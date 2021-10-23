@@ -1,4 +1,4 @@
-import {Box, Button, Grid, LinearProgress, Paper, Typography} from "@mui/material";
+import {Box, Grid, LinearProgress} from "@mui/material";
 import {Question} from "../Question";
 import {useEffect, useMemo, useState} from "react";
 import {ApiService} from "../../service/ApiService";
@@ -61,8 +61,7 @@ export const QuestionPage = () => {
             <img
                 src={img}
                 style={{
-                    maxWidth: '100%',
-                    maxHeight: '80%'
+                    maxHeight: 'calc(80vh -84px)'
                 }}
             />
         </Grid>

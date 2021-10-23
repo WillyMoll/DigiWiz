@@ -25,7 +25,7 @@ export const UseCasePage = () => {
     return <LoadingOverlay
         active={loading}
     >
-        {data.map(u => <Card>
+        {data.length > 0 ? data.map(u => <Card>
             <CardHeader title={u.name}/>
             <CardContent>
                 {u.solutions.slice(0, 3).map((s: any) => <Solution
@@ -38,6 +38,8 @@ export const UseCasePage = () => {
             <CardActions>
                 <Button>Alle Anzeigen</Button>
             </CardActions>
-        </Card>)}
+        </Card>) : <Card>
+            <CardContent>So wie es aussieht sind Sie schon perfekt digitalisiert.</CardContent>
+        </Card>}
     </LoadingOverlay>
 }

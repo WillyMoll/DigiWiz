@@ -11,7 +11,6 @@ function App() {
     return (
         <Container>
             <AppBar/>
-            <Toolbar/>
             <Box sx={{height: 20}}/>
             <Switch>
                 <Route exact path={'/'} component={HomePage}/>
