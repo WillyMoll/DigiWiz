@@ -6,6 +6,8 @@ import {useSnackbar} from 'notistack';
 import LoadingOverlay from 'react-loading-overlay';
 import {useHistory, useParams} from "react-router-dom";
 
+import img from "../../wiz.jpg"
+
 export const QuestionPage = () => {
     const {id} = useParams<{ id: string }>()
     const h = useHistory()
@@ -49,9 +51,10 @@ export const QuestionPage = () => {
     return <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
             <img
-                src={"https://clipground.com/images/a-person-clipart-7.jpg"}
+                src={img}
                 style={{
                     maxWidth: '100%',
+                    maxHeight: '80%'
                 }}
             />
         </Grid>

@@ -63,7 +63,7 @@ export const AppBar = () => {
                     <SearchIcon/>
                 </SearchIconWrapper>
                 <StyledInputBase
-                    placeholder="Search…"
+                    placeholder="Suche…"
                     inputProps={{'aria-label': 'search'}}
                 />
             </Search>
