@@ -1,42 +1,43 @@
 import {Solution} from "../Solution";
-import {Button, Card, CardActions, CardContent, CardHeader, Paper, Typography} from "@mui/material";
-import {useParams} from "react-router-dom";
+import {Button, Card, CardActions, CardContent, CardHeader} from "@mui/material";
+import {useLocation} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {ApiService} from "../../service/ApiService";
 import {useSnackbar} from "notistack";
 import LoadingOverlay from "react-loading-overlay";
 
 export const UseCasePage = () => {
-    const {usecase} = useParams<{ usecase: string }>()
+    const location = useLocation();
     const {enqueueSnackbar} = useSnackbar()
     const [loading, setLoading] = useState(false)
-    const [data, setData] = useState<any>()
+    const [data, setData] = useState<any[]>([])
 
     useEffect(() => {
         setLoading(true);
-        ApiService.getUseCase(usecase)
+        const ids = new URLSearchParams(location.search).getAll('ids').map(i => parseInt(i))
+        ApiService.getUseCases(ids)
             .then(setData)
             .catch(e => enqueueSnackbar('Fehler', {variant: 'error'}))
             .finally(() => setLoading(false))
     }, [])
 
+    //TODO: add show all functionality
     return <LoadingOverlay
         active={loading}
     >
-        <Card>
-            <CardHeader title={usecase}/>
+        {data.map(u => <Card>
+            <CardHeader title={u.name}/>
             <CardContent>
-                {/*TODO: top 3*/}
-                <Solution
-                    title={'TestSolution'}
-                    text={'TestSolutionText TestSolutionText TestSolutionText TestSolutionText '}
-                    imgUrl={"https://www.test.de/file/image/91/11/adf39d8b-d8db-4686-8f71-ed9e4f27f5ca-web/5766132_Blutdruckmessgeraete-t2009-5007166-0.jpg"}
-                    webUrl={"https://test.de"}
-                />
+                {u.solutions.slice(0, 3).map((s: any) => <Solution
+                    title={s.name}
+                    text={s.description}
+                    imgUrl={s.image}
+                    webUrl={s.website}
+                />)}
             </CardContent>
             <CardActions>
                 <Button>Alle Anzeigen</Button>
             </CardActions>
-        </Card>
+        </Card>)}
     </LoadingOverlay>
 }
