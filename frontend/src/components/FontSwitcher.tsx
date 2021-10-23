@@ -5,7 +5,7 @@ import {useThemeSettings} from "../config/theme";
 export const FontSwitcher = () => {
     const {fontSize, setFontSize, font, setFont} = useThemeSettings()
     return <Grid container spacing={3}>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12}>
             <InputLabel id="font-label">Schriftart</InputLabel>
             <Select
                 labelId="font-label"
@@ -18,7 +18,7 @@ export const FontSwitcher = () => {
                 <MenuItem value={'OpenDyslexic'}>OpenDyslexic</MenuItem>
             </Select>
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12}>
             <Typography id="input-slider" gutterBottom>
                 Schriftgrösse
             </Typography>

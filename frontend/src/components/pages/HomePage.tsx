@@ -18,15 +18,6 @@ export const HomePage = () => {
     }, [])
 
     return <Box>
-        <Card>
-            <CardContent>
-                <FontSwitcher/>
-            </CardContent>
-            <CardContent>
-                Lorem Ipsum dolor sit amet.
-            </CardContent>
-        </Card>
-        <Box sx={{height: 20}}/>
         <Grid container spacing={3}>
             {questionSets.map((q: any) => <Grid item xs={4}>
                 <Card>

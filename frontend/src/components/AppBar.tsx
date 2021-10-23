@@ -1,7 +1,8 @@
-import {alpha, InputBase, styled, Toolbar, Typography, AppBar as MuiAppBar} from "@mui/material";
+import {alpha, InputBase, styled, Toolbar, Typography, AppBar as MuiAppBar, Box} from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import React from "react";
 import {useHistory} from "react-router-dom";
+import {SettingsMenu} from "./SettingsMenu";
 
 const Search = styled('div')(({theme}) => ({
     position: 'relative',
@@ -66,6 +67,8 @@ export const AppBar = () => {
                     inputProps={{'aria-label': 'search'}}
                 />
             </Search>
+            <Box sx={{flexGrow: 1}}/>
+            <SettingsMenu></SettingsMenu>
         </Toolbar>
     </MuiAppBar>
 }

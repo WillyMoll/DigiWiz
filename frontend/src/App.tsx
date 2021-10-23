@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Toolbar} from "@mui/material";
+import {Box, Container, Toolbar} from "@mui/material";
 import {AppBar} from "./components/AppBar";
 import {Route, Switch} from "react-router-dom";
 import {HomePage} from "./components/pages/HomePage";
@@ -12,6 +12,7 @@ function App() {
         <Container>
             <AppBar/>
             <Toolbar/>
+            <Box sx={{height: 20}}/>
             <Switch>
                 <Route exact path={'/'} component={HomePage}/>
                 <Route path={'/questions/:id'} component={QuestionPage}/>

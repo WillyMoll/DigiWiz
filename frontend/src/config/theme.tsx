@@ -1,6 +1,6 @@
 import {createTheme, CssBaseline, ThemeProvider} from "@mui/material";
+import { green,  } from '@mui/material/colors';
 import React, {createContext, Dispatch, SetStateAction, useContext, useMemo, useState} from "react";
-
 
 export const theme = createTheme({});
 
@@ -21,7 +21,12 @@ export const ThemeContextProvider = (props: { children: any }) => {
         typography: {
             fontFamily: font,
             fontSize: fontSize,
-        }
+        },
+        palette: {
+            primary: {
+                main: '#3f50b5',
+            },
+        },
     }), [font, fontSize])
 
     return <ThemeContext.Provider
