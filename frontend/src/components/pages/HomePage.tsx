@@ -23,13 +23,16 @@ export const HomePage = () => {
                 <Typography variant="h3" component="div">
                     Digiwiz
                 </Typography>
+                <Box sx={{height: 20}}/>
                 <Typography variant="body2" color="text.secondary">
                     Beschreibung von Digiwiz. Beschreibung von Digiwiz.Beschreibung von Digiwiz.Beschreibung von Digiwiz.Beschreibung von Digiwiz.Beschreibung von Digiwiz.
                     Beschreibung von Digiwiz. Beschreibung von Digiwiz.Beschreibung von Digiwiz.Beschreibung von Digiwiz.Beschreibung von Digiwiz.Beschreibung von Digiwiz.
                 </Typography>
+                <Box sx={{height: 20}}/>
                 <Typography variant="h6" component="div">
                     Anleitung
                 </Typography>
+                <Box sx={{height: 10}}/>
                 <Typography variant="body2" color="text.secondary">
                     Anleitung von Digiwiz. Anleitung von Digiwiz.Anleitung von Digiwiz.Anleitung von Digiwiz.Anleitung von Digiwiz.Anleitung von Digiwiz.
                 </Typography>

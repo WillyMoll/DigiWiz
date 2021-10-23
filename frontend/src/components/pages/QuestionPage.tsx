@@ -34,7 +34,6 @@ export const QuestionPage = () => {
         if (!questionSet.questions || questionSet.questions.length <= 0) return null
 
         return answers.length < questionSet.questions.length ? <Question
-            title={"TestQuestion"}
             text={questionSet.questions[answers.length].description}
             callBack={handleQuestionAnswer}
         /> : <Paper>
