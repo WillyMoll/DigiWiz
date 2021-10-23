@@ -61,7 +61,8 @@ export const QuestionPage = () => {
             <img
                 src={img}
                 style={{
-                    maxHeight: 'calc(80vh -84px)'
+                    maxHeight: 'calc(80vh -84px)',
+                    maxWidth: '100%',
                 }}
             />
         </Grid>
