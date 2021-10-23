@@ -7,7 +7,7 @@ export class DBMock {
 
     solutions: Solution[];
     useCases: UseCase[];
-
+    questions: Question[];
 
     constructor() {
 
@@ -15,6 +15,7 @@ export class DBMock {
         let buchhaltung = new Question(2, "Machen sie ihre Buchhaltung auf Papier?");
         let chat = new Question(3, "Verwenden sie ein Firmeninternes Nachrichten-Programm?");
         let planung = new Question(4, "Verwenden sie Ein Programm zur Arbeitsplanung?");
+        this.questions = [banking, buchhaltung, chat, planung];
 
         this.useCases = [];
         this.useCases.push(new UseCase(1, "Online Banking", [], [banking]));
@@ -40,7 +41,7 @@ export class DBMock {
     }
 
     getQuestions(): any {
-        return this.solutions;
+        return this.questions;
     }
 
     getUseCases(): any {

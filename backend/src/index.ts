@@ -1,6 +1,7 @@
 import express from "express";
 import config from "./config/config.json";
 import {DBMock} from "./models/DBMock";
+import cors from "cors";
 
 const app = express();
 const port = config.port; // default port to listen
@@ -8,17 +9,18 @@ const db = new DBMock();
 
 app.get("/questions", (req, res) => {
     res.send({
-        success: true,
         payload: db.getQuestions()
     });
 });
 
 app.get("/usecases", (req, res) => {
+
     res.send({
-        success: true,
         payload: db.getUseCases()
     })
 });
+
+app.use(cors());
 
 // start the express server
 app.listen(port, () => {
