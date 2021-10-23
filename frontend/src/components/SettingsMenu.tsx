@@ -1,7 +1,6 @@
 import React from "react";
-import {Box, Button, InputLabel, Menu, MenuItem, Select} from "@mui/material";
+import {Box, Button, Menu, MenuItem} from "@mui/material";
 import {FontSwitcher} from "./FontSwitcher";
-import {theme} from "../config/theme";
 
 export const SettingsMenu = () => {
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -20,6 +19,7 @@ export const SettingsMenu = () => {
                 aria-controls="basic-menu"
                 aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}
+                color={'inherit'}
                 onClick={handleClick}
             >
                 Einstellungen
@@ -34,7 +34,7 @@ export const SettingsMenu = () => {
                 }}
             >
                 <MenuItem onClick={handleClose}>
-                    <FontSwitcher></FontSwitcher>
+                    <FontSwitcher/>
                 </MenuItem>
             </Menu>
         </Box>
