@@ -1,5 +1,4 @@
 import {Box, Button, Card, CardActions, CardContent, CardHeader, CardMedia, Grid, Typography} from "@mui/material";
-import {FontSwitcher} from "../FontSwitcher";
 import React, {useEffect, useState} from "react";
 import {useHistory} from "react-router-dom";
 import {ApiService} from "../../service/ApiService";
@@ -7,9 +6,6 @@ import {ApiService} from "../../service/ApiService";
 export const HomePage = () => {
     const [questionSets, setQuestionSets] = useState<any>([])
     const h = useHistory()
-    const startQuiz = () => {
-        h.push('/questions')
-    }
 
     useEffect(() => {
         ApiService.getQuestionSets()
@@ -27,7 +23,8 @@ export const HomePage = () => {
                 <Typography variant="body2" color="text.secondary">
                     DigiWitz ist ihr online Assistent um Digitale Lösungen für ihre Firma zu finden.
                     Beschreibung von Digiwiz.
-                    Beschreibung von Digiwiz. Beschreibung von Digiwiz.Beschreibung von Digiwiz.Beschreibung von Digiwiz.Beschreibung von Digiwiz.Beschreibung von Digiwiz.
+                    Beschreibung von Digiwiz. Beschreibung von Digiwiz.Beschreibung von Digiwiz.Beschreibung von
+                    Digiwiz.Beschreibung von Digiwiz.Beschreibung von Digiwiz.
                 </Typography>
                 <Box sx={{height: 20}}/>
                 <Typography variant="h6" component="div">
@@ -36,15 +33,15 @@ export const HomePage = () => {
                 <Box sx={{height: 10}}/>
                 <Typography variant="body2" color="text.secondary">
                     Beantworten sie die Fragen
-                    Anleitung von Digiwiz. Anleitung von Digiwiz.Anleitung von Digiwiz.Anleitung von Digiwiz.Anleitung von Digiwiz.Anleitung von Digiwiz.
+                    Anleitung von Digiwiz. Anleitung von Digiwiz.Anleitung von Digiwiz.Anleitung von Digiwiz.Anleitung
+                    von Digiwiz.Anleitung von Digiwiz.
                 </Typography>
             </CardContent>
         </Card>
         <Box sx={{height: 20}}/>
-        <Grid  container spacing={3} style={{backgroundColor:'fffdd0'}}
-               >
+        <Grid container spacing={3}>
             {questionSets.map((q: any) => <Grid item sm={4} xs={12}>
-                <Card >
+                <Card>
                     <CardHeader title={q.name}/>
                     <CardMedia
 

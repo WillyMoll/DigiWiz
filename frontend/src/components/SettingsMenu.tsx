@@ -16,7 +16,6 @@ export const SettingsMenu = () => {
     return (
         <Box>
             <Button
-                sx={{color: '#000000'}}
                 id="basic-button"
                 aria-controls="basic-menu"
                 aria-haspopup="true"

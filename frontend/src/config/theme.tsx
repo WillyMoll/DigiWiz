@@ -22,14 +22,6 @@ export const ThemeContextProvider = (props: { children: any }) => {
             fontFamily: font,
             fontSize: fontSize,
         },
-        palette: {
-            primary: {
-                main: '#f6f6f6',
-            },
-            secondary:{
-                main: '#f5f5f5'
-            }
-        },
     }), [font, fontSize])
 
     return <ThemeContext.Provider

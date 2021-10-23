@@ -27,7 +27,7 @@ export const UseCasePage = () => {
     >
         {data.length > 0 ? data.map(u => <Card>
             <CardHeader title={u.name}/>
-            <CardContent style={{backgroundColor: ''}}>
+            <CardContent>
                 {u.solutions.slice(0, 3).map((s: any) => <Solution
                     title={s.name}
                     text={s.description}
