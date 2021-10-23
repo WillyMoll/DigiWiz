@@ -56,7 +56,7 @@ export const QuestionPage = () => {
         return Math.round((answers.length / questionSet.questions?.length ?? 1) * 100);
     }, [questionSet, answers])
 
-    return <Grid container spacing={2} sx={{flexFlow: {xs: 'column-reverse', sm: 'column'}}}>
+    return <Grid container spacing={2} sx={{flexFlow: {xs: 'column-reverse', sm: 'row'}}}>
         <Grid item xs={12} md={6} sx={{alignContent: 'center'}}>
             <img
                 src={img}

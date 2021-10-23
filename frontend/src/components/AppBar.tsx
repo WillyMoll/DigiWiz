@@ -12,6 +12,7 @@ export const AppBar = () => {
             <IconButton
                 sx={{display: {xs: 'block', sm: 'none'}}}
                 onClick={() => h.push('/')}
+                color={'inherit'}
             >
                 <HomeIcon/>
             </IconButton>
