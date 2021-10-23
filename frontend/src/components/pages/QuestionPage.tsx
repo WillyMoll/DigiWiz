@@ -1,4 +1,4 @@
-import {Button, Grid, Paper, Typography} from "@mui/material";
+import {Box, Button, Grid, LinearProgress, Paper, Typography} from "@mui/material";
 import {Question} from "../Question";
 import {useEffect, useMemo, useState} from "react";
 import {ApiService} from "../../service/ApiService";
@@ -48,6 +48,10 @@ export const QuestionPage = () => {
         </Paper>
     }, [questionSet, answers])
 
+    const progress = useMemo(() => {
+        return Math.round((answers.length / questionSet.questions?.length ?? 1) * 100);
+    }, [questionSet, answers])
+
     return <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
             <img
@@ -64,6 +68,11 @@ export const QuestionPage = () => {
             >
                 {question}
             </LoadingOverlay>
+            <Box sx={{height: 15}}/>
+            <LinearProgress
+                value={progress}
+                variant="determinate"
+            />
         </Grid>
     </Grid>
 }
