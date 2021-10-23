@@ -46,22 +46,9 @@ export const QuestionPage = () => {
             return null;
         }
 
-        return <><Question
+        return <Question
             text={questionSet.questions[answers.length].description}
             callBack={handleQuestionAnswer}/>
-
-            <Paper>
-                <Typography>Fertig! : )</Typography>
-                <Button
-                    style={{margin: 10}}
-                    variant={'contained'}
-                    onClick={() => {
-                        h.push('/usecase/1');
-                    }}
-                >Vorschläge anzeigen</Button>
-            </Paper>
-
-        </>
     }, [questionSet, answers]);
 
 
