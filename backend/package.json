@@ -1,13 +1,12 @@
 {
   "scripts": {
     "start": "ts-node src/index.ts",
-    "deploy": "cd ../ && git subtree push --prefix backend heroku-backend master || true"
+    "deploy": "cd .. && git push heroku-backend `git subtree split --prefix backend master`:master --force"
   },
   "dependencies": {
+    "@types/node": "^16.11.4",
     "cors": "^2.8.5",
-    "express": "^4.17.1"
-  },
-  "devDependencies": {
+    "express": "^4.17.1",
     "ts-node": "^10.4.0",
     "typescript": "^4.4.4"
   }

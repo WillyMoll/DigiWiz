@@ -7,6 +7,7 @@ const app = express();
 const port = config.port; // default port to listen
 const db = new DBMock();
 
+
 app.use(cors());
 
 app.get("/questions", (req, res) => {
@@ -34,7 +35,7 @@ app.post("/solutions", (req, res) => {
 });
 
 // start the express server
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
     // tslint:disable-next-line:no-console
     console.log(`server started at http://localhost:${port}`);
 });

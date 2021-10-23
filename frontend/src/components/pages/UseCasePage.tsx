@@ -16,7 +16,8 @@ export const UseCasePage = () => {
         <Solution
             title={'TestSolution'}
             text={'TestSolutionText TestSolutionText TestSolutionText TestSolutionText '}
-            url={"https://test.com"}
+            imgUrl={"https://www.test.de/file/image/91/11/adf39d8b-d8db-4686-8f71-ed9e4f27f5ca-web/5766132_Blutdruckmessgeraete-t2009-5007166-0.jpg"}
+            webUrl={"https://test.de"}
         />
     </Paper>
 }
