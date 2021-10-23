@@ -31,7 +31,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "cd ../ && git subtree push --prefix frontend heroku-frontend master || true"
+    "deploy": "cd .. && git push heroku-frontend `git subtree split --prefix frontend master`:master --force"
   },
   "eslintConfig": {
     "extends": [

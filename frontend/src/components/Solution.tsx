@@ -9,8 +9,13 @@ interface SolutionProps {
 }
 
 export const Solution = (props: SolutionProps) => {
-    return <Card sx={{margin: '20px', display: 'flex', flexDirection: {xs: 'column', sm: 'row'}}}>
-        <Box style={{flexGrow: 1}}>
+    return <Card sx={{
+        margin: '10px',
+        display: 'flex',
+        flexDirection: {xs: 'column', sm: 'row'},
+        justifyContent: 'space-between'
+    }}>
+        <Box>
             <CardHeader title={props.title}/>
             <CardMedia
                 component="img"
@@ -31,8 +36,8 @@ export const Solution = (props: SolutionProps) => {
         </Box>
         <CardMedia
             component="img"
-            sx={{display: {xs: "none", sm: 'block'}, float: "right", width: "20%"}}
             image={props.imgUrl}
+            sx={{width: 250, objectFit: 'contain'}}
         />
     </Card>
 }
