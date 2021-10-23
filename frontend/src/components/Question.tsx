@@ -8,7 +8,7 @@ interface QuestionProps {
 }
 
 export const Question = (props: QuestionProps) => {
-    return <Card sx={{marginTop: '100px'}}>
+    return <Card>
         <CardContent>
             <Typography variant="h4" color="text.secondary" sx={{ margin: '10px' }}>
                 {props.text}

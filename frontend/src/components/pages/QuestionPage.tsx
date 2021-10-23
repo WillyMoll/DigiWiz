@@ -56,14 +56,16 @@ export const QuestionPage = () => {
         return Math.round((answers.length / questionSet.questions?.length ?? 1) * 100);
     }, [questionSet, answers])
 
-    return <Grid container spacing={2}>
-        <Grid item xs={12} md={6}>
+    return <Grid container spacing={2} sx={{flexFlow: {xs: 'column-reverse', sm: 'column'}}}>
+        <Grid item xs={12} md={6} sx={{alignContent: 'center'}}>
             <img
                 src={img}
                 style={{
-                    maxHeight: 'calc(80vh -84px)',
-                    maxWidth: '100%',
+                    // maxHeight: 'calc(80vh -84px)',
+                    width: '100%',
+                    display: 'inline-block'
                 }}
+                alt={'Pixil der Zauberer'}
             />
         </Grid>
         <Grid item xs={12} md={6}>
