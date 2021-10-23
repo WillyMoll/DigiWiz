@@ -19,7 +19,7 @@ export const Solution = (props:SolutionProps) => {
                     {props.text}
                 </Typography>
                 <CardActions>
-                    <Button sx={{ paddingLeft: '30px', paddingRight: '30px' }} variant="contained" size="small" onClick={() => {window.open(props.webUrl)}}>Webseite</Button>
+                    <Button sx={{paddingLeft: '30px', paddingRight: '30px' }} variant="contained" size="small" onClick={() => {window.open(props.webUrl)}}>Webseite</Button>
                 </CardActions>
             </CardContent>
         </Box>
