@@ -36,6 +36,10 @@ app.get("/solutions", (req, res) => {
     res.send(db.getSolutions())
 });
 
+app.get("/solutions/:id", (req, res) => {
+    res.send(db.getSolution(req.params.id))
+});
+
 app.get("/companies", (req, res) => {
 
     res.send(db.getCompanies())
