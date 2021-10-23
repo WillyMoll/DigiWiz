@@ -41,8 +41,8 @@ app.get("/companies", (req, res) => {
     res.send(db.getCompanies())
 });
 
-app.post("/solutions", (req, res) => {
-    res.send(db.getSolutionsByIDs(req.body));
+app.post("/usecases", (req, res) => {
+    res.send(db.getUseCasesByIDs(req.body));
 
 });
 

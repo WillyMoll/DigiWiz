@@ -83,21 +83,21 @@ export class DBMock {
         return this.companies;
     }
 
-    getSolutionsByIDs(questionIds: number[]) {
-        let solutions = [];
+    getUseCasesByIDs(questionIds: number[]) {
+        let useCases = [];
         for (let id of questionIds) {
             for (let useCase of this.useCases) {
                 for (let question of useCase.questions) {
                     if (question.id === id) {
-                        solutions = solutions.concat(useCase.solutions);
+                        useCases.push(useCase);
                     }
                 }
             }
         }
-        return solutions;
+        return Array.from(new Set(useCases));
     }
 
     getUseCase(id: string) {
-        return this.getUseCases().filter(u => u.id == id)
+        return this.getUseCases().filter(u => u.id == id);
     }
 }
