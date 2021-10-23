@@ -29,7 +29,7 @@ app.get("/companies", (req, res) => {
 });
 
 // start the express server
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
     // tslint:disable-next-line:no-console
     console.log(`server started at http://localhost:${port}`);
 });
