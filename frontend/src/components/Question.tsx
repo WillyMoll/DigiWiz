@@ -1,4 +1,3 @@
-
 import {Button, Card, CardActions, CardContent, Typography} from "@mui/material";
 import React from 'react';
 
@@ -10,7 +9,7 @@ interface QuestionProps {
 export const Question = (props: QuestionProps) => {
     return <Card>
         <CardContent>
-            <Typography variant="h4" color="text.secondary" sx={{ margin: '10px' }}>
+            <Typography variant="h4" color="text.secondary" sx={{margin: '10px'}}>
                 {props.text}
             </Typography>
             <CardActions sx={{display: 'flex', justifyContent: 'space-around', marginTop: '30px'}}>
