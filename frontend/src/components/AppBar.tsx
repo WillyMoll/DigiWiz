@@ -1,15 +1,4 @@
-import {
-    alpha,
-    AppBar as MuiAppBar,
-    Autocomplete as MuiAutocomplete,
-    Box,
-    InputBase,
-    styled,
-    TextField,
-    Toolbar,
-    Typography
-} from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
+import {AppBar as MuiAppBar, Box, Toolbar, Typography} from "@mui/material";
 import React from "react";
 import {useHistory} from "react-router-dom";
 import {SettingsMenu} from "./SettingsMenu";
