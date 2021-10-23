@@ -24,8 +24,8 @@ export class DBMock {
         this.useCases.push(new UseCase(3, "Projektverwaltung", [], [chat, planung]));
         this.useCases.push(new UseCase(4, "Chat-Programm", [], [chat]));
 
-        let zkb = new Company(1, "https://www.zkb.ch", "Die Möglichkeit Rechnungen vom Computer aus zu bezahlen mit zkb");
-        let ubs = new Company(2, "https://www.ubs.ch", "Die Möglichkeit Rechnungen vom Computer aus zu bezahlen mit ubs");
+        let zkb = new Company(1, "https://www.zkb.ch", "Die Möglichkeit, Rechnungen vom Computer aus zu bezahlen mit ZKB");
+        let ubs = new Company(2, "https://www.ubs.ch", "Die Möglichkeit, Rechnungen vom Computer aus zu bezahlen mit UBS");
         let bexio = new Company(3, "https://www.bexio.com/de-CH/buchhaltungsprogramm", "Alles, was Sie benötigen, in einer intuitiven Software für KMU");
         let trello = new Company(4, "https://trello.com", "Trello helps teams move work forward");
         let zoho = new Company(5, "https://www.zoho.com", "The best project management software for any business");
