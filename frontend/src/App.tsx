@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Container, Toolbar} from "@mui/material";
+import {Box, Container, Paper, Toolbar} from "@mui/material";
 import {AppBar} from "./components/AppBar";
 import {Route, Switch} from "react-router-dom";
 import {HomePage} from "./components/pages/HomePage";
@@ -17,6 +17,9 @@ function App() {
                 <Route path={'/questions/:id'} component={QuestionPage}/>
                 <Route path={'/usecases'} component={UseCasePage}/>
             </Switch>
+            <Paper style={{padding: "5px", marginTop: "20px"}}>
+                &#169; Familie Moll
+            </Paper>
         </Container>
     );
 }
