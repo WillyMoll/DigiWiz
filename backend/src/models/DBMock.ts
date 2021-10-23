@@ -30,10 +30,10 @@ export class DBMock {
         let slackSolution = new Solution(6, "Slack", "https://slack.com/intl/de-ch", "https://aem.dropbox.com/cms/content/dam/dropbox/www/en-us/business/app-integrations/slack/Slack_logo_new.png", "Slack ist die Zukunft der Arbeit", slack, []);
         this.solutions = [zkbSolution, ubsSolution, bexioSolution, trelloSolution, zohoSolution, slackSolution];
 
-        let banking = new Question(1, "Verwenden sie online Banking?");
+        let banking = new Question(1, "Verwenden sie online Banking?", true);
         let buchhaltung = new Question(2, "Machen sie ihre Buchhaltung auf Papier?");
-        let chat = new Question(3, "Verwenden sie ein Firmeninternes Nachrichten-Programm?");
-        let planung = new Question(4, "Verwenden sie Ein Programm zur Arbeitsplanung?");
+        let chat = new Question(3, "Verwenden sie ein Firmeninternes Nachrichten-Programm?", true);
+        let planung = new Question(4, "Verwenden sie Ein Programm zur Arbeitsplanung?", true);
         this.questions = [banking, buchhaltung, chat, planung];
 
         this.useCases = [];
@@ -49,9 +49,7 @@ export class DBMock {
             new QuestionSet(4, "Produktionsunternehmen", [banking, planung, chat], "https://cdn0.iconfinder.com/data/icons/shopping-set-3/512/e7-512.png"),
             new QuestionSet(5, "Bauunternehmen", [banking, planung, chat], "https://cdn0.iconfinder.com/data/icons/shopping-set-3/512/e7-512.png"),
             new QuestionSet(6, "Finanzen", [banking, planung, chat], "https://cdn0.iconfinder.com/data/icons/shopping-set-3/512/e7-512.png"),
-
         ]
-
     }
 
     getQuestions(): any {
