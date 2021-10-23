@@ -10,30 +10,22 @@ const db = new DBMock();
 app.use(cors());
 
 app.get("/questions", (req, res) => {
-    res.send({
-        payload: db.getQuestions()
-    });
+    res.send(db.getQuestions());
 });
 
 app.get("/usecases", (req, res) => {
 
-    res.send({
-        payload: db.getUseCases()
-    })
+    res.send(db.getUseCases())
 });
 
 app.get("/solutions", (req, res) => {
 
-    res.send({
-        payload: db.getSolutions()
-    })
+    res.send(db.getSolutions())
 });
 
 app.get("/companies", (req, res) => {
 
-    res.send({
-        payload: db.getCompanies()
-    })
+    res.send(db.getCompanies())
 });
 
 // start the express server
