@@ -1,5 +1,5 @@
 import React from 'react';
-import {Box, Container, Paper, Toolbar} from "@mui/material";
+import {Box, Container} from "@mui/material";
 import {AppBar} from "./components/AppBar";
 import {Route, Switch} from "react-router-dom";
 import {HomePage} from "./components/pages/HomePage";

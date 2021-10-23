@@ -1,5 +1,4 @@
 import {Box, Button, Card, CardActions, CardContent, CardHeader, CardMedia, Grid, Typography} from "@mui/material";
-import {FontSwitcher} from "../FontSwitcher";
 import React, {useEffect, useState} from "react";
 import {useHistory} from "react-router-dom";
 import {ApiService} from "../../service/ApiService";
@@ -7,9 +6,6 @@ import {ApiService} from "../../service/ApiService";
 export const HomePage = () => {
     const [questionSets, setQuestionSets] = useState<any>([])
     const h = useHistory()
-    const startQuiz = () => {
-        h.push('/questions')
-    }
 
     useEffect(() => {
         ApiService.getQuestionSets()
@@ -35,19 +31,18 @@ export const HomePage = () => {
                 </Typography>
                 <Box sx={{height: 10}}/>
                 <Typography variant="body2" color="text.secondary">
-                    Beantworten sie die Fragen
-                    Anleitung von Digiwiz. Anleitung von Digiwiz.Anleitung von Digiwiz.Anleitung von Digiwiz.Anleitung von Digiwiz.Anleitung von Digiwiz.
+                    Wählen sie die Branche in welcher sie tätig sind und beantworten sie die geschlossenen Fragen des Programmes.
+                    Aufgrund ihrer Wahl werden ihnen danach digitale Lösungen angezeigt, welche die Produktivität ihres
+                    Unternehmens steigern könnten.
                 </Typography>
             </CardContent>
         </Card>
         <Box sx={{height: 20}}/>
-        <Grid  container spacing={3}
-               >
+        <Grid container spacing={3}>
             {questionSets.map((q: any) => <Grid item sm={4} xs={12}>
-                <Card >
+                <Card>
                     <CardHeader title={q.name}/>
                     <CardMedia
-
                         component="img"
                         height="194"
                         image={q.icon}

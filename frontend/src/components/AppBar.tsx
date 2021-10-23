@@ -1,4 +1,14 @@
-import {alpha, InputBase, styled, Toolbar, Typography, AppBar as MuiAppBar, Box} from "@mui/material";
+import {
+    alpha,
+    AppBar as MuiAppBar,
+    Autocomplete as MuiAutocomplete,
+    Box,
+    InputBase,
+    styled,
+    TextField,
+    Toolbar,
+    Typography
+} from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import React from "react";
 import {useHistory} from "react-router-dom";
@@ -44,6 +54,19 @@ const StyledInputBase = styled(InputBase)(({theme}) => ({
     },
 }));
 
+const StyledTextField = styled(TextField)(({theme}) => ({
+    '& .MuiInputLabel-root': {
+        color: 'inherit',
+    },
+    '& .MuiFilledInput-root': {
+        borderColor: 'red !important',
+
+        '& :before': {
+            borderColor: 'yellow !important',
+        },
+    },
+}))
+
 export const AppBar = () => {
     const h = useHistory();
 
@@ -67,8 +90,17 @@ export const AppBar = () => {
                     inputProps={{'aria-label': 'search'}}
                 />
             </Search>
+            <Box>
+                <MuiAutocomplete
+                    disablePortal
+                    options={[]}
+                    sx={{width: 300}}
+                    color={'inherit'}
+                    renderInput={(params) => <StyledTextField {...params} size={'small'} label="Suche" variant={'filled'}/>}
+                />
+            </Box>
             <Box sx={{flexGrow: 1}}/>
-            <SettingsMenu></SettingsMenu>
+            <SettingsMenu/>
         </Toolbar>
     </MuiAppBar>
 }
