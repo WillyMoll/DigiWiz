@@ -6,7 +6,7 @@ import {useSnackbar} from 'notistack';
 import LoadingOverlay from 'react-loading-overlay';
 import {useHistory, useParams} from "react-router-dom";
 
-import img from "../../wiz.jpg"
+import img from "../../PixilDerGrosseZauberer.png"
 
 export const QuestionPage = () => {
     const {id} = useParams<{ id: string }>()
