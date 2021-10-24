@@ -22,7 +22,7 @@ export const QuestionPage = () => {
         setLoading(true)
         ApiService.getQuestionSet(id)
             .then(setQuestionSet)
-            .catch(e => enqueueSnackbar('Fehler', {variant: 'error'}))
+            .catch(e => enqueueSnackbar('Fehler, bitte versuchen Sie es später erneut', {variant: 'error'}))
             .finally(() => setLoading(false))
     }, [])
 
@@ -56,7 +56,7 @@ export const QuestionPage = () => {
         return Math.round((answers.length / questionSet.questions?.length ?? 1) * 100);
     }, [questionSet, answers])
 
-    return <Grid container spacing={2} sx={{flexFlow: {xs: 'column-reverse', sm: 'row'}, alignItems: 'center'}}>
+    return <Grid container spacing={2} sx={{flexFlow: {xs: 'column-reverse', sm: 'row'}, alignItems: 'flex-end'}}>
         <Grid item xs={12} md={6} sx={{alignContent: 'center'}}>
             <img
                 src={img}
@@ -72,13 +72,13 @@ export const QuestionPage = () => {
                 active={loading}
             >
                 {question}
-            </LoadingOverlay>
             <Box sx={{height: 15}}/>
             <LinearProgress
                 value={progress}
                 variant="determinate"
             />
             {answers.length}/{questionSet.questions?.length ?? 1}
+            </LoadingOverlay>
         </Grid>
     </Grid>
 }

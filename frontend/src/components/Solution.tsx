@@ -37,7 +37,7 @@ export const Solution = (props: SolutionProps) => {
         <CardMedia
             component="img"
             image={props.imgUrl}
-            sx={{width: 250, objectFit: 'contain'}}
+            sx={{width: 250, objectFit: 'contain', display: {xs: 'none', sm: 'block'}}}
         />
     </Card>
 }

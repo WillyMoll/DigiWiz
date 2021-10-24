@@ -6,26 +6,35 @@ import {
     CardContent,
     CardHeader,
     CardMedia,
-    Grid, Paper,
+    Grid,
+    Paper,
     TextField,
     Typography
 } from "@mui/material";
 import React, {useEffect, useState} from "react";
 import {useHistory} from "react-router-dom";
 import {ApiService} from "../../service/ApiService";
+import {useSnackbar} from "notistack";
+import LoadingOverlay from "react-loading-overlay";
 
 export const HomePage = () => {
     const [questionSets, setQuestionSets] = useState<any>([])
+    const [loading, setLoading] = useState(false)
     const [filter, setFilter] = useState('')
     const h = useHistory()
+    const {enqueueSnackbar} = useSnackbar()
 
     useEffect(() => {
+        setLoading(true)
         ApiService.getQuestionSets()
             .then(setQuestionSets)
-        //TODO: error + loading
+            .catch(e => enqueueSnackbar('Fehler, bitte versuchen Sie es später erneut', {variant: 'error'}))
+            .finally(() => setLoading(false))
     }, [])
 
-    return <Box>
+    return <LoadingOverlay
+        active={loading}
+    >
         <Card>
             <CardContent>
                 <Typography variant="h3" component="div">
@@ -84,5 +93,5 @@ export const HomePage = () => {
                     </Card>
                 </Grid>)}
         </Grid>
-    </Box>
+    </LoadingOverlay>
 }

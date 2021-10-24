@@ -18,17 +18,21 @@ export const UseCasePage = () => {
             const ids = new URLSearchParams(location.search).getAll('ids').map(i => parseInt(i))
             ApiService.getUseCases(ids)
                 .then(setData)
-                .catch(e => enqueueSnackbar('Fehler', {variant: 'error'}))
+                .catch(e => enqueueSnackbar('Fehler, bitte versuchen Sie es später erneut', {variant: 'error'}))
                 .finally(() => setLoading(false))
         }
     }, [enqueueSnackbar, location.search])
 
     return <LoadingOverlay
         active={loading}
+        spinner
     >
-        {data.length > 0 ? <Grid container spacing={3}>
+        {!loading ? (data.length > 0 ? <Grid container spacing={3}>
             {data.map(u => <Grid item xs={12} key={u.id}><UseCase {...u}/></Grid>)}</Grid> : <Card>
             <CardContent>So wie es aussieht sind Sie schon perfekt digitalisiert.</CardContent>
+        </Card>):
+        <Card>
+            <CardContent>Laden...</CardContent>
         </Card>}
     </LoadingOverlay>
 }
