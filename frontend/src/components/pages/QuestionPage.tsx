@@ -20,6 +20,7 @@ export const QuestionPage = () => {
         if (loading) return;
 
         setLoading(true)
+        window.scrollTo(0, 0);
         ApiService.getQuestionSet(id)
             .then(setQuestionSet)
             .catch(e => enqueueSnackbar('Fehler, bitte versuchen Sie es später erneut', {variant: 'error'}))
