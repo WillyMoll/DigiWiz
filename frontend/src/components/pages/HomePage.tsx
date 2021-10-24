@@ -46,7 +46,7 @@ export const HomePage = () => {
             />
             <CardContent>
                 <Typography variant="h3" component="div">
-                    Hallo, Ich bin Digiwiz
+                    Hallo, Ich bin Pixil!
                 </Typography>
                 <Box sx={{height: 20}}/>
                 <Typography variant="body2" color="text.secondary">
@@ -58,7 +58,7 @@ export const HomePage = () => {
                 </Typography>
                 <Box sx={{height: 10}}/>
                 <Typography variant="body2" color="text.secondary">
-                    Wählen sie die Branche in welcher sie tätig sind und beantworten sie die geschlossenen Fragen die ich für sie zusammenstellen werde.
+                    Wählen sie die Branche in welcher sie tätig sind und beantworten sie die geschlossenen Fragen die ich für sie herbeizaubern werde.
                     Aufgrund ihrer Wahlen werde ich ihnen danach digitale Lösungen angezeigen, welche die Produktivität und Digitalisierung ihres
                     Unternehmens steigern könnten.
                 </Typography>
