@@ -54,8 +54,8 @@ export const QuestionPage = () => {
 
 
     const progress = useMemo(() => {
-        return Math.round((answers.length / questionSet.questions?.length ?? 1) * 100);
-    }, [questionSet, answers])
+        return Math.round(((answers.length + 1) / questionSet.questions?.length ?? 1) * 100);
+    }, [questionSet, answers]);
 
     return <Grid container spacing={2} sx={{flexFlow: {xs: 'column-reverse', sm: 'row'}, alignItems: 'flex-end'}}>
         <Grid item xs={12} md={6} sx={{alignContent: 'center'}}>
@@ -74,12 +74,12 @@ export const QuestionPage = () => {
                 spinner
             >
                 {question}
-            <Box sx={{height: 15}}/>
-            <LinearProgress
-                value={progress}
-                variant="determinate"
-            />
-            {answers.length}/{questionSet.questions?.length ?? 1}
+                <Box sx={{height: 15}}/>
+                <LinearProgress
+                    value={progress}
+                    variant="determinate"
+                />
+                {answers.length + 1}/{questionSet.questions?.length ?? 1}
             </LoadingOverlay>
         </Grid>
     </Grid>
