@@ -13,7 +13,7 @@ export const UseCasePage = () => {
     const [data, setData] = useState<any[]>([])
 
     useEffect(() => {
-        if(enqueueSnackbar) {
+        if (enqueueSnackbar) {
             setLoading(true);
             const ids = new URLSearchParams(location.search).getAll('ids').map(i => parseInt(i))
             ApiService.getUseCases(ids)

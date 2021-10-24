@@ -70,6 +70,7 @@ export const QuestionPage = () => {
         <Grid item xs={12} md={6}>
             <LoadingOverlay
                 active={loading}
+                spinner
             >
                 {question}
             <Box sx={{height: 15}}/>

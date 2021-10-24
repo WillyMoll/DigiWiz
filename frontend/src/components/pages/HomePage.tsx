@@ -32,9 +32,7 @@ export const HomePage = () => {
             .finally(() => setLoading(false))
     }, [])
 
-    return <LoadingOverlay
-        active={loading}
-    >
+    return <>
         <Card>
             <CardContent>
                 <Typography variant="h3" component="div">
@@ -58,40 +56,45 @@ export const HomePage = () => {
             </CardContent>
         </Card>
         <Box sx={{height: 20}}/>
-        <Grid container spacing={3}>
-            <Grid item xs={12}>
-                <Paper>
-                    <TextField
-                        label={'Filter'}
-                        fullWidth={true}
-                        value={filter}
-                        onChange={(e) => setFilter(e.target.value)}
-                    />
-                </Paper>
-            </Grid>
-            {questionSets
-                .filter((q: any) =>
-                    filter === ''
-                    || q.name.toLowerCase().includes(filter.toLowerCase()))
-                .map((q: any) => <Grid item sm={4} xs={12}>
-                    <Card>
-                        <CardHeader title={q.name}/>
-                        <CardMedia
-                            component="img"
-                            height="194"
-                            image={q.icon}
-                            alt="Fragebogen symbolbild"
+        <LoadingOverlay
+            active={loading}
+            spinner
+        >
+            <Grid container spacing={3}>
+                <Grid item xs={12}>
+                    <Paper>
+                        <TextField
+                            label={'Filter'}
+                            fullWidth={true}
+                            value={filter}
+                            onChange={(e) => setFilter(e.target.value)}
                         />
-                        <CardActions style={{justifyContent: "center"}}>
-                            <Button
-                                variant={'contained'}
-                                onClick={() => {
-                                    h.push(`/questions/${q.id}`)
-                                }}
-                            >Quiz starten</Button>
-                        </CardActions>
-                    </Card>
-                </Grid>)}
-        </Grid>
-    </LoadingOverlay>
+                    </Paper>
+                </Grid>
+                {questionSets
+                    .filter((q: any) =>
+                        filter === ''
+                        || q.name.toLowerCase().includes(filter.toLowerCase()))
+                    .map((q: any) => <Grid item sm={4} xs={12}>
+                        <Card>
+                            <CardHeader title={q.name}/>
+                            <CardMedia
+                                component="img"
+                                height="194"
+                                image={q.icon}
+                                alt="Fragebogen symbolbild"
+                            />
+                            <CardActions style={{justifyContent: "center"}}>
+                                <Button
+                                    variant={'contained'}
+                                    onClick={() => {
+                                        h.push(`/questions/${q.id}`)
+                                    }}
+                                >Quiz starten</Button>
+                            </CardActions>
+                        </Card>
+                    </Grid>)}
+            </Grid>
+        </LoadingOverlay>
+    </>
 }
