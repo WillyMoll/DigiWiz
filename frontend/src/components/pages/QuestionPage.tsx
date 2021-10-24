@@ -54,7 +54,7 @@ export const QuestionPage = () => {
 
 
     const progress = useMemo(() => {
-        return Math.round(((answers.length + 1) / questionSet.questions?.length ?? 1) * 100);
+        return Math.round(((answers.length) / questionSet.questions?.length ?? 1) * 100);
     }, [questionSet, answers]);
 
     return <Grid container spacing={2} sx={{flexFlow: {xs: 'column-reverse', sm: 'row'}, alignItems: 'flex-end'}}>
