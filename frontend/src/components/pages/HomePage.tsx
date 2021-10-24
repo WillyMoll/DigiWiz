@@ -50,7 +50,7 @@ export const HomePage = () => {
                 </Typography>
                 <Box sx={{height: 20}}/>
                 <Typography variant="body2" color="text.secondary">
-                    Ihr online Assistent um Digitale Lösungen für ihr Unternehmen zu finden.
+                    Ihr online Assistent um digitale Lösungen für ihr Unternehmen zu finden.
                 </Typography>
                 <Box sx={{height: 20}}/>
                 <Typography variant="h6" component="div">
@@ -59,7 +59,7 @@ export const HomePage = () => {
                 <Box sx={{height: 10}}/>
                 <Typography variant="body2" color="text.secondary">
                     Wählen sie die Branche in welcher sie tätig sind und beantworten sie die geschlossenen Fragen die ich für sie herbeizaubern werde.
-                    Aufgrund ihrer Wahlen werde ich ihnen danach digitale Lösungen angezeigen, welche die Produktivität und Digitalisierung ihres
+                    Aufgrund ihrer Antworten werde ich ihnen danach digitale Lösungen angezeigen, welche die Digitalisierung und Produktivität ihres
                     Unternehmens steigern könnten.
                 </Typography>
             </CardContent>
