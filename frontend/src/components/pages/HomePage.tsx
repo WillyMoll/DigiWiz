@@ -75,7 +75,7 @@ export const HomePage = () => {
                     .filter((q: any) =>
                         filter === ''
                         || q.name.toLowerCase().includes(filter.toLowerCase()))
-                    .map((q: any) => <Grid item sm={4} xs={12}>
+                    .map((q: any) => <Grid item lg={4} md={6} sm={12}>
                         <Card>
                             <CardHeader title={q.name}/>
                             <CardMedia
