@@ -75,7 +75,7 @@ export const HomePage = () => {
                     .filter((q: any) =>
                         filter === ''
                         || q.name.toLowerCase().includes(filter.toLowerCase()))
-                    .map((q: any) => <Grid item lg={4} md={6} sm={12}>
+                    .map((q: any) => <Grid item lg={4} sm={6} xs={12}>
                         <Card>
                             <CardHeader title={q.name}/>
                             <CardMedia
@@ -83,6 +83,7 @@ export const HomePage = () => {
                                 height="194"
                                 image={q.icon}
                                 alt="Fragebogen symbolbild"
+                                sx={{objectFit: 'contain'}}
                             />
                             <CardActions style={{justifyContent: "center"}}>
                                 <Button
