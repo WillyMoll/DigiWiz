@@ -16,6 +16,7 @@ import {useHistory} from "react-router-dom";
 import {ApiService} from "../../service/ApiService";
 import {useSnackbar} from "notistack";
 import LoadingOverlay from "react-loading-overlay";
+import img from "../../PixilDerGrosseZauberer.png";
 
 export const HomePage = () => {
     const [questionSets, setQuestionSets] = useState<any>([])
@@ -33,14 +34,23 @@ export const HomePage = () => {
     }, [])
 
     return <>
-        <Card>
+        <Card sx={{
+            display: 'flex',
+            flexDirection: {xs: 'column', sm: 'row'},
+            justifyContent: 'space-between'
+        }}>
+            <CardMedia
+                component="img"
+                image={img}
+                sx={{width: 300, objectFit: 'contain', display: {xs: 'block', sm: 'block'}}}
+            />
             <CardContent>
                 <Typography variant="h3" component="div">
-                    DigiWiz
+                    Hallo, Ich bin Digiwiz
                 </Typography>
                 <Box sx={{height: 20}}/>
                 <Typography variant="body2" color="text.secondary">
-                    DigiWiz ist ihr online Assistent um Digitale Lösungen für ihre Firma zu finden.
+                    Ihr online Assistent um Digitale Lösungen für ihr Unternehmen zu finden.
                 </Typography>
                 <Box sx={{height: 20}}/>
                 <Typography variant="h6" component="div">
@@ -48,10 +58,9 @@ export const HomePage = () => {
                 </Typography>
                 <Box sx={{height: 10}}/>
                 <Typography variant="body2" color="text.secondary">
-                    Wählen sie die Branche in welcher sie tätig sind und beantworten sie die geschlossenen Fragen des
-                    Programmes.
-                    Aufgrund ihrer Wahl werden ihnen danach digitale Lösungen angezeigt, welche die Produktivität ihres
-                    Unternehmens steigern werden.
+                    Wählen sie die Branche in welcher sie tätig sind und beantworten sie die geschlossenen Fragen die ich für sie zusammenstellen werde.
+                    Aufgrund ihrer Wahlen werde ich ihnen danach digitale Lösungen angezeigen, welche die Produktivität und Digitalisierung ihres
+                    Unternehmens steigern könnten.
                 </Typography>
             </CardContent>
         </Card>
